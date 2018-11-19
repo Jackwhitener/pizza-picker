@@ -9,9 +9,11 @@ get '/crust' do
 	erb :crust
 end
 post '/crust' do
-	size = params[:size]
-	redirect '/bread?size=' + size
+	size = Array.new
+	size << params[:size]
+	redirect '/bread?size=' + size.to_s
 end
 get '/bread' do
-
+	size = params[:size]
+	erb :bread, locals: {size: size}
 end
