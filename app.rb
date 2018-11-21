@@ -19,6 +19,9 @@ post '/pizza' do
 	sauce = params[:sauce]
 	cheese = params[:cheese]
 	toppings = params[:toppings]
+	if toppings == nil
+		toppings << "nothing"
+	end
 	redirect '/verify?size=' + size.to_s + '&bread=' + bread.to_s + '&sauce=' + sauce.to_s + '&cheese=' + cheese.to_s + '&toppings=' + toppings.to_s
 end
 get '/verify' do
