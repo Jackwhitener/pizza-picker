@@ -5,7 +5,7 @@ A <%= size.join %> pizza on <%= bread.join%> bread, with <%= sauce.join %>, <%= 
 <% toppings.each do |y| %>
 	<% if y == toppings.last && y != toppings[0] %>
 		<%= y.insert(0, 'and ') %>
-	<% elsif y != toppings.last && y != toppings[0]  %>
+	<% elsif y != toppings.last  %>
 		<%= y += ", " %>
 	<% else %>
 		<%= y + " " %>
