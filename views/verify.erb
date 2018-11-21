@@ -3,17 +3,24 @@
 Here is the pizza you've selected: <br>
 A <%= size.join %> pizza on <%= bread.join%> bread, with <%= sauce.join %>, <%= cheese.join %> cheese, and 
 <% toppings.each do |y| %>
-	<% if y == toppings.last %>
+	<% if y == toppings.last && y != toppings[0] %>
 		<%= y.insert(0, 'and ') %>
-	<% else %>
+	<% elsif y != toppings.last && y != toppings[0]  %>
 		<%= y += ", " %>
+	<% else %>
+		<%= y + " " %>
 	<%end%>
 <%end%>
 on top.
 Is this what you want? <br>
 <form method = post action = '/verify'>
-	<input type = 'radio' name = 'correct' id = 'yes'> Yes <br>
-	<input type = 'radio' name = 'correct' id = 'no'> No <br>
+	<input type = 'hidden' name = 'size' value = '<%= size %>'>
+	<input type = 'hidden' name = 'bread' value = '<%= bread %>'>
+	<input type = 'hidden' name = 'sauce' value = '<%= sauce %>'>
+	<input type = 'hidden' name = 'cheese' value = '<%= cheese %>'>
+	<input type = 'hidden' name = 'toppings' value = '<%= toppings %>'>
+	<input type = 'radio' name = 'correct' value = 'yes' checked> Yes <br>
+	<input type = 'radio' name = 'correct' value = 'no'> No <br>
 	<input type="submit" value = 'Submit'>
 
 </form>
