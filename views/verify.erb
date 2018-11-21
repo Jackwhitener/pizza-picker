@@ -1,7 +1,7 @@
 <b><em> <h1 style = "background-color:Tomato;"> Welcome to Argioligazolistrombolizambonioli's Pizzaria</em></b></h1>
 <br>
 Here is the pizza you've selected: <br>
-A <%= size.join %> pizza on <%= bread.join%> bread, with <%= sauce.join %>, <%= cheese.join %> cheese, and 
+A <%= size.join %> pizza on <%= bread.join%> bread, with <%= sauce.join %>, <%= cheese.join %> cheese, 
 <% toppings.each do |y| %>
 	<% if y == toppings.last && y != toppings[0] %>
 		<%= y.insert(0, 'and ') %>
