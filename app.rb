@@ -3,17 +3,29 @@ get '/' do
 	erb :start
 end
 post '/start' do
-	redirect '/crust?'
+	redirect '/pizza?'
 end
-get '/crust' do
-	erb :crust
+get '/pizza' do
+	erb :pizza
 end
-post '/crust' do
+post '/pizza' do
 	size = Array.new
+	bread = Array.new
+	sauce = Array.new
+	cheese = Array.new
+	toppings = Array.new
 	size << params[:size]
-	redirect '/bread?size=' + size.to_s
+	bread << params[:bread]
+	sauce = params[:sauce]
+	cheese = params[:cheese]
+	toppings = params[:toppings]
+	redirect 'verify?size=' + size.to_s + '&bread=' + bread.to_s + '&sauce=' + sauce.to_s + '&cheese=' + cheese.to_s + '&toppings=' + toppings.to_s
 end
-get '/bread' do
-	size = params[:size]
-	erb :bread, locals: {size: size}
+get '/verify' do
+	size = eval(params[:size])
+	bread = eval(params[:bread])
+	sauce = eval(params[:sauce])
+	cheese = eval(params[:cheese])
+	toppings = eval(params[:toppings])
+	erb :verify, locals: {size: size, bread: bread, sauce: sauce, cheese: cheese, toppings: toppings}
 end
