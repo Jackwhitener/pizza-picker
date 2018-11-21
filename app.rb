@@ -59,5 +59,15 @@ post '/address' do
 	toppings = params[:toppings]
 	address = params[:address]
 	instorepickup = params[:instorepickup]
-	redirect '/final?size=' + size.to_s + '&bread=' + bread.to_s + '&sauce=' + sauce.to_s + '&cheese=' + cheese.to_s + '&toppings=' + toppings.to_s + '&address=' + address '&instorepickup=' + instorepickup
+	redirect '/final?size=' + size.to_s + '&bread=' + bread.to_s + '&sauce=' + sauce.to_s + '&cheese=' + cheese.to_s + '&toppings=' + toppings.to_s + '&address=' + address.to_s + '&instorepickup=' + instorepickup
+end
+get '/final' do
+	size = eval(params[:size])
+	bread = eval(params[:bread])
+	sauce = eval(params[:sauce])
+	cheese = eval(params[:cheese])
+	toppings = eval(params[:toppings])
+	address = eval(params[:address])
+	instorepickup = params[:instorepickup]
+	erb :final, locals: {size: size, bread: bread, sauce: sauce, cheese: cheese, toppings: toppings, address: address, instorepickup: instorepickup}
 end
