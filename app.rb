@@ -35,13 +35,7 @@ post '/verify' do
 	sauce = eval(params[:sauce])
 	cheese = eval(params[:cheese])
 	toppings = eval(params[:toppings])
-	correct = params[:correct]
-	puts "Is it correct: #{correct}"
-	if correct == 'yes'
-		redirect 'yes?size=' + size.to_s + '&bread=' + bread.to_s + '&sauce=' + sauce.to_s + '&cheese=' + cheese.to_s + '&toppings=' + toppings.to_s
-	elsif correct == 'no'
-		redirect '/pizza?'
-	end
+	redirect 'yes?size=' + size.to_s + '&bread=' + bread.to_s + '&sauce=' + sauce.to_s + '&cheese=' + cheese.to_s + '&toppings=' + toppings.to_s
 end
 get '/yes' do
 	size = params[:size]
