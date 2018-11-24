@@ -2,6 +2,7 @@
 <form method = post action = '/pizza'>
 	Time to prepare your specialized crust, select a size.<br>
 	Select a size:<br>
+	<input type = 'hidden' name = 'pizza' value = '<%= pizza %>'>
 	<input type="radio" name="size" value="personal"> Personal: This time, it's personal.
 	<img src="https://www.wildmikesultimatepizza.com/wp-content/uploads/2017/09/1funsize_web2.png" height = '42' width = '42'> <br>
 	<input type="radio" name="size" value="small"> Small: For when you're not really hungry, but you still want some 'za. <img src="https://www.wildmikesultimatepizza.com/wp-content/uploads/2017/09/1funsize_web2.png" height = '84' width = '84'> <br>

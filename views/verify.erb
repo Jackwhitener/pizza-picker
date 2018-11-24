@@ -1,25 +1,25 @@
 <b><em> <h1 style = "background-color:Tomato;"> Welcome to Argioligazolistrombolizambonioli's Pizzaria</em></b></h1>
 <br>
 Here is the pizza you've selected: <br>
-A <%= size.join %> pizza on <%= bread.join%> bread, with <%= sauce.join %>, <%= cheese.join %> cheese, 
-<% toppings.each do |y| %>
-	<% if y == toppings.last  %>
-		<%= y.insert(0, 'and ') %>
-	<% elsif y != toppings.last && y != toppings[0] %>
-		<%= y += ", " %>
-	<% else %>
-		<%= y + " " %>
+	<% pizza.each do |pizaz|%> 
+		A <%= pizaz[0] %> pizza on a <%= pizaz[1] %> crust, with <%= pizaz[2].join %>, <%= pizaz[3].join %>, 
+		<% pizaz[4].each do |toppings| %>
+			<% if toppings == pizaz[4].last %>
+				<%= (toppings + ".").insert(0, 'and ') %>
+			<% elsif toppings != pizaz[4].last && toppings != pizaz[4][0]  %>
+				<%= toppings += ", " %>
+			<% else %>
+				<%= toppings + " " %>
+			<%end%>
+			<br>
+		<%end%>
 	<%end%>
-<%end%>
-on top.
-Is this what you want? <br>
+If this pizza isn't what you want, go back! <br>
 <form method = post action = '/verify'>
-	<input type = 'hidden' name = 'size' value = '<%= size %>'>
-	<input type = 'hidden' name = 'bread' value = '<%= bread %>'>
-	<input type = 'hidden' name = 'sauce' value = '<%= sauce %>'>
-	<input type = 'hidden' name = 'cheese' value = '<%= cheese %>'>
-	<input type = 'hidden' name = 'toppings' value = '<%= toppings %>'>
-	<input type = 'submit' name = 'yes' value = 'Yes' checked><br>
-	<input type="button" value="No" onclick="history.back()">
-
+	<input type = 'hidden' name = 'pizza' value = '<%= pizza %>'>
+	<input type="button" value="Go Back" onclick="history.back()"> <br>
+	Or would you like to add another pizza to your order? <br>
+	<input type="radio" name='addpizza' value = "Yes"> Yes <br>
+	<input type="radio" name='addpizza' value = "No"checked> No <br>
+	<input type='submit' value = 'Submit'>
 </form>

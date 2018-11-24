@@ -1,26 +1,31 @@
 <b><em> <h1 style = "background-color:Tomato;"> Welcome to Argioligazolistrombolizambonioli's Pizzaria</em></b></h1>
 <% if instorepickup == "no" %>
-Your <%= size.join %> pizza on <%= bread.join%> bread, with <%= sauce.join %>, <%= cheese.join %> cheese, and 
-<% toppings.each do |y| %>
-	<% if y == toppings.last && y != toppings[0] %>
-		<%= y.insert(0, 'and ') %>
-	<% elsif y != toppings.last && y != toppings[0]  %>
-		<%= y += ", " %>
-	<% else %>
-		<%= y + " " %>
+	<% pizza.each do |pizaz|%> 
+		A <%= pizaz[0] %> pizza on a <%= pizaz[1] %> crust, with <%= pizaz[2].join %>, <%= pizaz[3].join %>, 
+		<% pizaz[4].each do |toppings| %>
+			<% if toppings == pizaz[4].last %>
+				<%= toppings.insert(0, 'and ') %>
+			<% elsif toppings != pizaz[4].last && toppings != pizaz[4][0]  %>
+				<%= toppings += ", " %>
+			<% else %>
+				<%= toppings + " " %>
+			<%end%>
+			will be delivered to <%= address.join %> <br>
+		<%end%>
 	<%end%>
-<%end%>
-will be delivered to <%= address.join %>, thank you!
-<% else %>
-Your <%= size.join %> pizza on <%= bread.join%> bread, with <%= sauce.join %>, <%= cheese.join %> cheese, and 
-<% toppings.each do |y| %>
-	<% if y == toppings.last && y != toppings[0] %>
-		<%= y.insert(0, 'and ') %>
-	<% elsif y != toppings.last && y != toppings[0]  %>
-		<%= y += ", " %>
+
 	<% else %>
-		<%= y + " " %>
+	<% pizza.each do |pizaz|%> 
+		A <%= pizaz[0] %> pizza on a <%= pizaz[1] %> crust, with <%= pizaz[2].join %>, <%= pizaz[3].join %>, 
+		<% pizaz[4].each do |toppings| %>
+			<% if toppings == pizaz[4].last %>
+				<%= toppings.insert(0, 'and ') %>
+			<% elsif toppings != pizaz[4].last && toppings != pizaz[4][0]  %>
+				<%= toppings += ", " %>
+			<% else %>
+				<%= toppings + " " %>
+			<%end%>
+		<%end%>
+		will be hot and ready for takeout. <br>
 	<%end%>
-<%end%>
-will be hot and ready to pick up in thirty minutes, thank you!
 <%end%>
