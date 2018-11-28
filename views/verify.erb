@@ -5,15 +5,15 @@ Here is the pizza you've selected: <br>
 		A <%= pizaz[0] %> pizza on a <%= pizaz[1] %> crust, with <%= pizaz[2].join %>, <%= pizaz[3].join %>,  
 		<% pizaz[4].each do |toppings| %>
 			<% if toppings == pizaz[4].last %>
-				<%= toppings + "." %>
+				<%= (toppings + ".").insert(0, 'and ') %>
 			<% elsif toppings != pizaz[4].last && toppings != pizaz[4][0]  %>
 				<%= toppings += ", " %>
 			<% else %>
 				<%= toppings + ", " %>
 			<%end%>
-			<br>
 		<%end%>
 	<%end%>
+	<br>
 If this pizza isn't what you want, go back! <br>
 <form method = post action = '/verify'>
 	<input type = 'hidden' name = 'pizza' value = '<%= pizza %>'>
