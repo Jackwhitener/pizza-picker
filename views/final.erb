@@ -10,10 +10,10 @@
 			<% else %>
 				<%= toppings + ", " %>
 			<%end%>
-			will be delivered to <%= address.join %> <br>
+
 		<%end%>
 	<%end%>
-
+			will be delivered to <%= address.join %> <br>
 	<% else %>
 	<% pizza.each do |pizaz|%> 
 		A <%= pizaz[0] %> pizza on a <%= pizaz[1] %> crust, with <%= pizaz[2].join %>, <%= pizaz[3].join %>, 
@@ -26,6 +26,6 @@
 				<%= toppings + " " %>
 			<%end%>
 		<%end%>
-		will be hot and ready for takeout. <br>
 	<%end%>
+	will be hot and ready for takeout. <br>
 <%end%>
