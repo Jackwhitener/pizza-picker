@@ -19,7 +19,7 @@ def price(pizza)
 		end
 		price += 4
 		za[4].each do
-			price += 1.5
+			price += 1.25
 		end
 	end
 	return price
