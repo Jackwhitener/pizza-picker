@@ -2,13 +2,13 @@ def price(pizza)
 	price = 0
 	pizza.each do |za|
 		if za[0] == "small"
-			price += 8
+			price += 6
 		elsif za[0] == "medium"
-			price += 10
+			price += 7
 		elsif za[0] == "large"
-			price += 12
+			price += 8
 		elsif za[0] == "x-large"
-			price += 14
+			price += 9
 		elsif za[0] == "monster"
 			price += 100
 		end
