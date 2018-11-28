@@ -2,6 +2,7 @@ require 'sinatra'
 get '/' do
 	erb :start
 end
+require_relative 'price.rb'
 post '/start' do
 	pizza = Array.new
 	redirect '/pizza?pizza=' + pizza.to_s
@@ -53,5 +54,7 @@ get '/final' do
 	puts "pizzas: #{pizza}"
 	address = eval(params[:address])
 	instorepickup = params[:instorepickup]
-	erb :final, locals: {pizza: pizza, address: address, instorepickup: instorepickup}
+	prices = price(pizza)
+	puts prices
+	erb :final, locals: {pizza: pizza, address: address, instorepickup: instorepickup, prices: prices}
 end

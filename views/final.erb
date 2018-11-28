@@ -1,4 +1,10 @@
 <b><em> <h1 style = "background-color:Tomato;"> Welcome to Argioligazolistrombolizambonioli's Pizzaria</em></b></h1>
+<style>
+body {
+    background-image: url("https://d3lawkbdj6aabd.cloudfront.net/singleplatform/image/upload/c_fit/095b2fda40625fbd7a0710500279835b37ee7221.jpg");;
+    color:black;
+}
+</style>
 <% if instorepickup == "no" %>
 	<% pizza.each do |pizaz|%> 
 		A <%= pizaz[0] %> pizza on a <%= pizaz[1] %> crust, with <%= pizaz[2].join %>, <%= pizaz[3].join %>, 
@@ -10,7 +16,6 @@
 			<% else %>
 				<%= toppings + ", " %>
 			<%end%>
-
 		<%end%>
 		<br>
 	<%end%>
@@ -30,3 +35,4 @@
 	<%end%>
 	will be hot and ready for takeout. <br>
 <%end%>
+Your pizza will cost: $<%= prices %>
