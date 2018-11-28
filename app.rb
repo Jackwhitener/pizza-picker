@@ -14,11 +14,16 @@ end
 post '/pizza' do
 	pizza = eval(params[:pizza])
 	addedpizza = Array.new
+	toppings = String.new
 	addedpizza << params[:size]
 	addedpizza << params[:bread]
 	addedpizza << params[:sauce]
 	addedpizza << params[:cheese]
-	addedpizza << params[:toppings]
+	if params[:toppings] == nil
+		addedpizza << ["nothing"]
+	else 
+		addedpizza << params[:toppings]
+	end
 	pizza << addedpizza
 	puts "pizza @ '/pizza': #{pizza}"
 	# pizza.delete_at(0)
