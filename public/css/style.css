@@ -1,0 +1,14 @@
+h1 {background-color:Tomato;
+font-size:35;
+text-align:left;
+font-family: Comic Sans MS;}
+
+body {
+    background-image: url("https://media.fox5dc.com/media.fox5dc.com/photo/2018/09/20/getty_pizza_1537444422303_6095945_ver1.0_640_360.jpg");
+    background-size:100%;
+
+    color:white;
+    font-size:25;
+    text-align:center;
+    font-family: Comic Sans MS;
+}
