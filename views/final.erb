@@ -15,6 +15,7 @@
 		<br>
 	<%end%>
 			will be delivered to <%= address.join %> <br>
+			Your pizza will cost: $<%= prices + 4.50 %><br>
 	<% else %>
 	<% pizza.each do |pizaz|%> 
 		A <%= pizaz[0] %> pizza on a <%= pizaz[1] %> crust, with <%= pizaz[2].join %>, <%= pizaz[3].join %>, 
@@ -29,6 +30,6 @@
 		<%end%>
 	<%end%>
 	will be hot and ready for takeout. <br>
+	Your pizza will cost: $<%= prices %><br>
 <%end%>
-Your pizza will cost: $<%= prices %><br>
 <input id="buttons" type = "button" value = "Restart" onClick = "location.href='/'">
