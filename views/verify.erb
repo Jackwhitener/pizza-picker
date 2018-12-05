@@ -4,16 +4,17 @@
 <br>
 Here is the pizza you've selected: <br>
 	<% pizza.each do |pizaz|%> 
-		A <%= pizaz[0] %> pizza on a <%= pizaz[1] %> crust, with <%= pizaz[2].join %>, <%= pizaz[3].join %>,  
-		<% pizaz[4].each do |toppings| %>
-			<% if toppings == pizaz[4].last %>
+	<%= pizaz[0] %> of: A <%= pizaz[1] %> pizza on a <%= pizaz[2] %> crust, with <%= pizaz[3].join %>, <%= pizaz[4].join %>,  
+		<% pizaz[5].each do |toppings| %>
+			<% if toppings == pizaz[5].last %>
 				<%= (toppings + ".").insert(0, 'and ') %>
-			<% elsif toppings != pizaz[4].last && toppings != pizaz[4][0]  %>
+			<% elsif toppings != pizaz[5].last && toppings != pizaz[4][0]  %>
 				<%= toppings += ", " %>
 			<% else %>
 				<%= toppings + ", " %>
 			<%end%>
 		<%end%>
+		<br>
 	<%end%>
 	<br>
 If this pizza isn't what you want, go back! <br>

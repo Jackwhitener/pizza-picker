@@ -5,6 +5,6 @@ Ok, where do you want your pizza? <br>
 	<input type = 'hidden' name = 'pizza' value = '<%= pizza %>'>
 	In-Store Pickup? <input type = 'radio' name = 'instorepickup' value = 'yes' > <br>
 	Delivery? <input type = 'radio' name = 'instorepickup' value = 'no'checked > <br>
-	Address if delivery: <input type = 'text' name = 'address[]' value = 'Address' >
+	Address if delivery: <input type = 'text' name = 'address[]' value = 'Address' pattern="[a-zA-Z0-9\s]{3,20}" >
 	<input type="submit" value = 'Submit'>
 </form>

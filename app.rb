@@ -15,6 +15,7 @@ post '/pizza' do
 	pizza = eval(params[:pizza])
 	addedpizza = Array.new
 	toppings = String.new
+	addedpizza << params[:numberofpizzas]
 	addedpizza << params[:size]
 	addedpizza << params[:bread]
 	addedpizza << params[:sauce]
